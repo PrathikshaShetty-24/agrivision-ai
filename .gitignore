@@ -1,0 +1,5 @@
+venv/ 
+dataset/raw/ 
+dataset/processed/ 
+__pycache__/ 
+*.pyc 
