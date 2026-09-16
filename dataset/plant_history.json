@@ -50,5 +50,22 @@
             "prediction": "Tomato_healthy",
             "confidence": 90.0
         }
+    ],
+    "tomato": [
+        {
+            "date": "2026-09-16 18:54",
+            "prediction": "Corn_Gray_Leaf_Spot",
+            "confidence": 89.7
+        },
+        {
+            "date": "2026-09-16 18:55",
+            "prediction": "Corn_Gray_Leaf_Spot",
+            "confidence": 52.09
+        },
+        {
+            "date": "2026-09-16 18:56",
+            "prediction": "Corn_Common_Rust",
+            "confidence": 76.49
+        }
     ]
 }

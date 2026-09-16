@@ -4,6 +4,7 @@ from PIL import Image
 import numpy as np
 import sys
 import os
+import json
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'model'))
 from tracker import save_observation, analyze_trend
@@ -57,3 +58,19 @@ if uploaded_file is not None and plant_id:
     trend = analyze_trend(plant_id)
     st.subheader("Trend Analysis")
     st.write(trend)
+
+    st.subheader("Observation History")
+
+    with open("dataset/plant_history.json", "r") as f:
+        history_data = json.load(f)
+
+    if plant_id in history_data:
+        history_list = history_data[plant_id]
+        st.table(history_list)
+
+        confidences = [entry["confidence"] for entry in history_list]
+        st.line_chart(confidences)
+
+    trend = analyze_trend(plant_id)
+    st.subheader("Trend Analysis")
+    st.write(trend)    
